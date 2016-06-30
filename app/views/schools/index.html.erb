@@ -1,0 +1,17 @@
+<h1>Listing schools</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Country</th>
+    <th>Website</th>
+  </tr>
+
+  <% @schools.each do |school| %>
+      <tr>
+        <td><%= school.name %></td>
+        <td><%= school.country %></td>
+        <td><%= school.website %></td>
+      </tr>
+  <% end %>
+</table>
