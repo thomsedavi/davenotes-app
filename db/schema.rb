@@ -11,18 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630120706) do
+ActiveRecord::Schema.define(version: 20160701092922) do
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "title"
+    t.text     "code"
+    t.integer  "school_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "courses", ["school_id"], name: "index_courses_on_school_id"
 
   create_table "schools", force: :cascade do |t|
     t.string   "name"
     t.string   "country"
     t.string   "website"
-    t.string   "primary_colour",   default: "#FF00FF"
-    t.string   "secondary_colour", default: "#00FFFF"
-    t.string   "text_colour",      default: "#000000"
+    t.string   "primary_colour",   default: "Orange"
+    t.string   "secondary_colour", default: "Green"
+    t.string   "text_colour",      default: "Black"
     t.boolean  "active",           default: false
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
 end

@@ -1,0 +1,15 @@
+<%= form_for :course, url: 'create' do |f| %>
+    <p>
+      <%= f.label :code %><br>
+      <%= f.text_field :code %>
+    </p>
+
+    <p>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
