@@ -12,3 +12,27 @@
   <strong>Website:</strong>
   <%= @school.website %>
 </p>
+
+<% if !@school.active %>
+  <p>This school is being reviewed to make sure it's a real school.</p>
+<% else %>
+    <p><%= link_to 'add course', @school.id.to_s + '/courses/new' %></p>
+<% end %>
+
+<p><%= link_to 'back', schools_path %></p>
+
+<% if @courses.size > 0 %>
+  <table>
+    <tr>
+      <th>Code</th>
+      <th>Title</th>
+    </tr>
+
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.code %></td>
+        <td><%= course.title %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

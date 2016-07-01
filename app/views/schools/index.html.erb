@@ -1,4 +1,6 @@
-<h1>Listing schools</h1>
+<h1>List of schools</h1>
+
+<%= link_to 'Add school', controller: 'schools', action: 'new' %>
 
 <table>
   <tr>
@@ -8,8 +10,10 @@
   </tr>
 
   <% @schools.where(:active => true).each do |school| %>
-    <tr style="color:<%= school.text_colour %>">
-      <td bgcolor="<%= school.primary_colour %>"><%= school.name %></td>
+    <tr>
+      <td bgcolor="<%= school.primary_colour %>">
+        <%= link_to school.name, school %>
+      </td>
       <td bgcolor="<%= school.secondary_colour %>"><%= school.country %></td>
       <td bgcolor="<%= school.primary_colour %>"><%= school.website %></td>
     </tr>
