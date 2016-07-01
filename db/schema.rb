@@ -17,8 +17,12 @@ ActiveRecord::Schema.define(version: 20160630120706) do
     t.string   "name"
     t.string   "country"
     t.string   "website"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "primary_colour",   default: "#FF00FF"
+    t.string   "secondary_colour", default: "#00FFFF"
+    t.string   "text_colour",      default: "#000000"
+    t.boolean  "active",           default: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
 end

@@ -1,0 +1,55 @@
+<%= form_for :school, url: school_path(@school), method: :patch do |f| %>
+
+    <% if @school.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@school.errors.count, "error") %> prohibited
+            this article from being saved:
+          </h2>
+          <ul>
+            <% @school.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+      <%= f.label :country %><br>
+      <%= f.text_field :country %>
+    </p>
+
+    <p>
+      <%= f.label :website %><br>
+      <%= f.text_field :website %>
+    </p>
+
+    <p>
+      <%= f.label :primary_colour %><br>
+      <%= f.text_field :primary_colour %>
+    </p>
+
+    <p>
+      <%= f.label :secondary_colour %><br>
+      <%= f.text_field :secondary_colour %>
+    </p>
+
+    <p>
+      <%= f.label :text_colour %><br>
+      <%= f.text_field :text_colour %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+
+<% end %>
+
+<%= link_to 'Destroy', school_path(@school),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %>

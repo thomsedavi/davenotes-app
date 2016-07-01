@@ -7,11 +7,11 @@
     <th>Website</th>
   </tr>
 
-  <% @schools.each do |school| %>
-      <tr>
-        <td><%= school.name %></td>
-        <td><%= school.country %></td>
-        <td><%= school.website %></td>
-      </tr>
+  <% @schools.where(:active => true).each do |school| %>
+    <tr style="color:<%= school.text_colour %>">
+      <td bgcolor="<%= school.primary_colour %>"><%= school.name %></td>
+      <td bgcolor="<%= school.secondary_colour %>"><%= school.country %></td>
+      <td bgcolor="<%= school.primary_colour %>"><%= school.website %></td>
+    </tr>
   <% end %>
 </table>
