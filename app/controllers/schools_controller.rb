@@ -13,7 +13,7 @@ class SchoolsController < ApplicationController
     if params[:search]
       courses = @school.courses.search(params[:search])
     else
-      courses = @school.course.all
+      courses = @school.courses.all
     end
     @courses = courses.paginate(:page => params[:page], :per_page => 5).order('code ASC, title ASC')
   end
