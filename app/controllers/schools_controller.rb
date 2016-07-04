@@ -20,8 +20,12 @@ class SchoolsController < ApplicationController
     @school = School.find(params[:id])
 
     if @school.update(school_params)
-      @school.update(:active => true)
-      redirect_to @school
+      if params[:commit] == "Preview"
+        render 'edit'
+      else
+        @school.update(:active => true)
+        redirect_to @school
+      end
     else
       render 'edit'
     end
