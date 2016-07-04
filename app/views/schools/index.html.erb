@@ -10,9 +10,10 @@
   </tr>
 
   <% @schools.where(:active => true).each do |school| %>
-    <tr>
+    <tr style="color:<%= school.text_colour%>">
       <td bgcolor="<%= school.primary_colour %>">
-        <%= link_to school.name, school %>
+        <%= link_to school.name, school,
+                    {:style=>'color:' + school.text_colour + '; text-decoration:none', :class => "css_class"} %>
       </td>
       <td bgcolor="<%= school.secondary_colour %>"><%= school.country %></td>
       <td bgcolor="<%= school.primary_colour %>"><%= school.website %></td>
