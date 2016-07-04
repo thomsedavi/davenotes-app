@@ -1,6 +1,6 @@
 class SchoolsController < ApplicationController
   def index
-    @schools = School.all
+    @schools = School.where(:active => true).paginate(:page => params[:page], :per_page => 5).order('name ASC, country ASC')
   end
 
   def show

@@ -9,7 +9,7 @@
     <th>Website</th>
   </tr>
 
-  <% @schools.where(:active => true).each do |school| %>
+  <% @schools.each do |school| %>
     <tr style="color:<%= school.text_colour%>">
       <td bgcolor="<%= school.primary_colour %>">
         <%= link_to school.name, school,
@@ -20,3 +20,5 @@
     </tr>
   <% end %>
 </table>
+
+<%= will_paginate @schools %>
