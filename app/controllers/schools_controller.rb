@@ -10,7 +10,12 @@ class SchoolsController < ApplicationController
 
   def show
     @school = School.find(params[:id])
-    @courses = @school.courses
+    if params[:search]
+      courses = @school.courses.search(params[:search])
+    else
+      courses = @school.course.all
+    end
+    @courses = courses.paginate(:page => params[:page], :per_page => 5).order('code ASC, title ASC')
   end
 
   def new

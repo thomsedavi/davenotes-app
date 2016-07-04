@@ -21,6 +21,11 @@
 
 <p><%= link_to 'back', schools_path %></p>
 
+<%= form_tag("/schools/" + @school.id.to_s, :method => "get") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Courses" %>
+    <%= submit_tag "search", :name => nil %>
+<% end %>
+
 <% if @courses.size > 0 %>
   <table>
     <tr>
@@ -39,3 +44,5 @@
     <% end %>
   </table>
 <% end %>
+
+<%= will_paginate @courses %>
