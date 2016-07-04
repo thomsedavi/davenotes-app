@@ -2,6 +2,11 @@
 
 <%= link_to 'Add school', controller: 'schools', action: 'new' %>
 
+<%= form_tag(schools_path, :method => "get") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Schools" %>
+    <%= submit_tag "search", :name => nil %>
+<% end %>
+
 <table>
   <tr>
     <th>Name</th>

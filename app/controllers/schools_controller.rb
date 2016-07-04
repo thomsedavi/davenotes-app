@@ -1,6 +1,11 @@
 class SchoolsController < ApplicationController
   def index
-    @schools = School.where(:active => true).paginate(:page => params[:page], :per_page => 5).order('name ASC, country ASC')
+    if params[:search]
+      schools = School.search(params[:search])
+    else
+      schools = School.all
+    end
+    @schools = schools.where(:active => true).paginate(:page => params[:page], :per_page => 5).order('name ASC, country ASC')
   end
 
   def show
