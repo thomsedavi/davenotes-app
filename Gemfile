@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '5.0.0'
 # Gotta get them passwords encrypted
 gem 'bcrypt',         '3.1.11'
 # Use PostgreSQL as the database for Active Record
@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Heroku wants me to add this as well
 ruby "2.3.1"
+# Apparently I want Puma
+gem 'puma'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
