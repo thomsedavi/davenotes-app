@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
+# Gotta get them passwords encrypted
+gem 'bcrypt',         '3.1.11'
 # Use PostgreSQL as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
