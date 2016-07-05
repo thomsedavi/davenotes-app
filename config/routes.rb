@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :schools
   resources :courses
+  resources :users
 
   root 'home#index'
 

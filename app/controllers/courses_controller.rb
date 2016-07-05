@@ -5,6 +5,7 @@ class CoursesController < ApplicationController
 
   def new
     @school = School.find(params[:id])
+    @course = Course.new
   end
 
   def create

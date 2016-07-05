@@ -1,22 +1,22 @@
-<%= form_for :school, url: schools_path do |f| %>
-    <p>
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </p>
+<%= form_for(@school) do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
 
-    <p>
-      <%= f.label :country %><br>
-      <%= f.text_field :country %>
-    </p>
+  <p>
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
+  </p>
 
-    <p>
-      <%= f.label :website %><br>
-      <%= f.text_field :website %>
-    </p>
+  <p>
+    <%= f.label :website %><br>
+    <%= f.text_field :website %>
+  </p>
 
-    <p>
-      <%= f.submit %>
-    </p>
+  <p>
+    <%= f.submit %>
+  </p>
 <% end %>
 
 <p><%= link_to 'back', schools_path %></p>

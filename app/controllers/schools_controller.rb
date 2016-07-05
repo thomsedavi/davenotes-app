@@ -19,7 +19,7 @@ class SchoolsController < ApplicationController
   end
 
   def new
-
+    @school = School.new
   end
 
   def edit
@@ -59,6 +59,7 @@ class SchoolsController < ApplicationController
   end
 
   private
+
   def school_params
     params.require(:school).permit(:name, :country, :website, :primary_colour,
                                    :secondary_colour, :text_colour)
