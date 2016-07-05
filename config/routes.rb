@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  get 'static_pages/home'
+  get 'static_pages/help'
+  get 'static_pages/about'
+
   get 'schools/:id/courses', to: 'courses#index'
   get 'schools/:id/courses/new', to: 'courses#new'
 
