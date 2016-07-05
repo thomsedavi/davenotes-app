@@ -5,8 +5,13 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  get 'schools/:id/courses' => 'courses#index'
-  get 'schools/:id/courses/new' => 'courses#new'
+  get 'schools/:id/courses', to: 'courses#index'
+  get 'schools/:id/courses/new', to: 'courses#new'
 
-  post 'schools/:id/courses/create' => 'courses#create'
+  get '/signup', to: 'users#new'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+
+  post 'schools/:id/courses/create', to: 'courses#create'
 end
