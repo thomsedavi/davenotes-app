@@ -1,4 +1,4 @@
-<% provide(:title, "Log in") %>
+<% provide(:title, 'Log in') %>
 <h1>Log in</h1>
 
 <%= form_for(:session, url: login_path) do |f| %>
@@ -9,7 +9,7 @@
   <%= f.label :password %>
   <%= f.password_field :password, class: 'form-control' %>
 
-  <%= f.submit "Log in" %>
+  <%= f.submit 'Log in' %>
 <% end %>
 
-<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+<p>New user? <%= link_to 'Sign up now!', signup_path %></p>

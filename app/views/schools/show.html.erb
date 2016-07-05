@@ -16,28 +16,30 @@
 <% if !@school.active %>
   <p>This school is being reviewed to make sure it's a real school.</p>
 <% else %>
-    <p><%= link_to 'add course', @school.id.to_s + '/courses/new' %></p>
+  <p><%= link_to 'add course', @school.id.to_s + '/courses/new' %></p>
 <% end %>
 
 <p><%= link_to 'back', schools_path %></p>
 
-<%= form_tag("/schools/" + @school.id.to_s, :method => "get") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Courses" %>
-    <%= submit_tag "search", :name => nil %>
+<%= form_tag('/schools/' + @school.id.to_s, :method => 'get') do %>
+    <%= text_field_tag :search, params[:search], placeholder: 'Search Courses' %>
+    <%= submit_tag 'search', :name => nil %>
 <% end %>
 
 <% if @courses.size > 0 %>
   <table>
-    <tr>
-      <th>Code</th>
-      <th>Title</th>
-    </tr>
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Title</th>
+      </tr>
+    </thead>
 
     <% @courses.each do |course| %>
       <tr>
         <td>
           <%= link_to course.code, course,
-                    {:style=>'color:black; text-decoration:none', :class => "css_class"} %>
+                    {:style=>'color:black; text-decoration:none'} %>
         </td>
         <td><%= course.title %></td>
       </tr>
