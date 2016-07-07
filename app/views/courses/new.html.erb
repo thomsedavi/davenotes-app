@@ -1,3 +1,4 @@
+<% provide(:title, 'New Course for ' + @school.name) %>
 <%= form_for(@course, url: 'create') do |f| %>
     <p>
       <%= f.label :code %><br>

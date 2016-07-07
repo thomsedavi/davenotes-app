@@ -1,6 +1,10 @@
 class CoursesController < ApplicationController
+  def index
+  end
+
   def show
     @course = Course.find(params[:id])
+    @school = School.find(@course.school_id)
   end
 
   def new
@@ -17,12 +21,6 @@ class CoursesController < ApplicationController
     else
       render 'new'
     end
-  end
-
-  def index
-    @school = School.find(params[:id])
-
-    render plain: @school.courses.inspect
   end
 
   private

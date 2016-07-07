@@ -1,3 +1,4 @@
+<% provide(:title, @school.name) %>
 <%= form_for :school, url: school_path(@school), method: :patch do |f| %>
 
     <% if @school.errors.any? %>
