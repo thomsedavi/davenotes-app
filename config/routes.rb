@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :courses
   resources :users
 
-  root 'home#index'
+  root 'static_pages#home'
 
   get 'static_pages/home'
   get 'static_pages/help'
