@@ -32,6 +32,9 @@ gem 'jbuilder', '~> 2.4.1'
 gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
+  # Needed for running some tests
+  gem 'rails-controller-testing', '~> 0.1.1'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', '~> 9.0.0', platform: :mri
 end
