@@ -1,5 +1,11 @@
-<h1>DaveNotes</h1>
-<p>
-  This is probably home.
-</p>
-<p><%= link_to 'schools', schools_path %></p>
+<div class="center jumbotron">
+  <h1>Welcome to DaveNotes</h1>
+  <h2>This is probably home.</h2>
+  <p><%= link_to 'Schools', schools_path, class: 'btn btn-lg btn-primary'  %></p>
+  <% if logged_in? %>
+    <p>Link to your favourite schools</p>
+    <p>Link to your favourite courses</p>
+  <% else %>
+    <%= link_to 'Sign up', signup_path, class: 'btn btn-lg btn-primary' %>
+  <% end %>
+</div>
