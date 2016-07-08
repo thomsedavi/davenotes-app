@@ -3,7 +3,7 @@
 
 <%= link_to 'Add school', new_school_path %>
 
-<%= form_tag(schools_path, :method => "get") do %>
+<%= form_tag(schools_path, :method => 'get') do %>
     <%= text_field_tag :search, params[:search], placeholder: 'Search Schools' %>
     <%= submit_tag 'search', :name => nil %>
 <% end %>
@@ -21,7 +21,7 @@
     <tr style="color:<%= school.text_colour%>">
       <td bgcolor="<%= school.primary_colour %>">
         <%= link_to school.name, school,
-                    {:style=>'color:' + school.text_colour + '; text-decoration:none'} %>
+                    {:style=>"color: #{school.text_colour} ; text-decoration:none"} %>
       </td>
       <td bgcolor="<%= school.secondary_colour %>"><%= school.country %></td>
       <td bgcolor="<%= school.primary_colour %>"><%= school.website %></td>

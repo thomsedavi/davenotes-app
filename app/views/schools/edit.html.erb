@@ -62,7 +62,7 @@
     <tr style="color:<%= @school.text_colour%>">
       <td bgcolor="<%= @school.primary_colour %>">
         <%= link_to @school.name, @school,
-                    {:style=>'color:' + @school.text_colour + '; text-decoration:none'} %>
+                    {:style=>"color: #{@school.text_colour}; text-decoration:none"} %>
       </td>
       <td bgcolor="<%= @school.secondary_colour %>"><%= @school.country %></td>
       <td bgcolor="<%= @school.primary_colour %>"><%= @school.website %></td>
