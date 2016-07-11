@@ -2,6 +2,7 @@ bob:
   name: Bob Allison
   email: bob@allison.com
   password_digest: <%= User.digest('password') %>
+  admin: true
 
 carol:
   name: Carol Cardigan
