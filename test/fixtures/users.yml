@@ -7,3 +7,20 @@ carol:
   name: Carol Cardigan
   email: carol@cardigan.co.au
   password_digest: <%= User.digest('password') %>
+
+dennis:
+  name: Dennis Doubleday
+  email: dennis@doubleday.com
+  password_digest: <%= User.digest('password') %>
+
+enid:
+  name: Enid Eddisson
+  email: enid@eddisson.com
+  password_digest: <%= User.digest('password') %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name:  <%= "User #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>

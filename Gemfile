@@ -20,6 +20,7 @@ gem 'coffee-rails', '~> 4.2.1'
 
 # Pagination
 gem 'will_paginate', '~> 3.1.0'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '~> 4.1.1'
@@ -30,6 +31,8 @@ gem 'jbuilder', '~> 2.4.1'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# This gem is a port of Perl's Data::Faker library that generates fake data
+gem 'faker', '~> 1.6.5'
 
 group :development, :test do
   # Needed for running some tests
