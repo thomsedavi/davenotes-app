@@ -21,4 +21,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   post 'schools/:id/courses/create', to: 'courses#create'
+
+  match '/404', :to => 'errors#not_found', :via => :all
+  match '/500', :to => 'errors#internal_server_error', :via => :all
 end
