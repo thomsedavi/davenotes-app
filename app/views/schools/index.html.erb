@@ -3,30 +3,18 @@
 
 <%= link_to 'Add school', new_school_path %>
 
-<%= form_tag(schools_path, :method => 'get') do %>
-    <%= text_field_tag :search, params[:search], placeholder: 'Search Schools' %>
-    <%= submit_tag 'search', :name => nil %>
-<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Country</th>
-      <th>Website</th>
-    </tr>
-  </thead>
+    <%= form_tag(schools_path, :method => 'get') do %>
+      <%= text_field_tag :search, params[:search], placeholder: 'Search Schools', class: 'form-control' %>
 
-  <% @schools.each do |school| %>
-    <tr style="color:<%= school.text_colour%>">
-      <td bgcolor="<%= school.primary_colour %>">
-        <%= link_to school.name, school,
-                    {:style=>"color: #{school.text_colour} ; text-decoration:none"} %>
-      </td>
-      <td bgcolor="<%= school.secondary_colour %>"><%= school.country %></td>
-      <td bgcolor="<%= school.primary_colour %>"><%= school.website %></td>
-    </tr>
-  <% end %>
-</table>
+      <%= submit_tag 'search', :name => nil, class: 'btn btn-primary' %>
+    <% end %>
+
+
+<%= will_paginate @schools %>
+
+<ul class="schools">
+  <%= render @schools %>
+</ul>
 
 <%= will_paginate @schools %>
