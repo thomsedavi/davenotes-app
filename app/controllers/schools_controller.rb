@@ -1,4 +1,6 @@
 class SchoolsController < ApplicationController
+  before_action :admin_user, only: [:destroy, :edit, :update]
+
   def index
     if params[:search]
       schools = School.search(params[:search])

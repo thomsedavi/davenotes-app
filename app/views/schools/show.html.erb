@@ -22,6 +22,10 @@
 
 <p><%= link_to 'back', schools_path %></p>
 
+<% if current_user && current_user.admin? %>
+  <p><%= link_to 'edit', edit_school_path(@school) %></p>
+<% end %>
+
 <%= form_tag("/schools/ #{@school.id.to_s}", :method => 'get') do %>
     <%= text_field_tag :search, params[:search], placeholder: 'Search Courses' %>
     <%= submit_tag 'search', :name => nil %>
