@@ -1,13 +1,13 @@
-<%= link_to school, {:style=>"text-decoration:none"} do %>
+<%= link_to school, {:style=>"color:#{school.text_colour};text-decoration:none"} do %>
   <li style="color:<%= school.text_colour%>;
       background-color:<%= school.primary_colour %>; border-color:<%= school.secondary_colour %>">
-    <span class="glyphicon glyphicon-education" style="color:<%= school.secondary_colour%>" aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-education" style="color:<%= school.secondary_colour %>" aria-hidden="true"></span>
     <%= school.name %>,
     <%= school.country %>
     <% if current_user && current_user.admin? %>
         | <%= link_to 'delete', school, method: :delete,
                       data: { confirm: 'You sure?' } %>
     <% end %>
-    <span class="glyphicon glyphicon-education" style="color:<%= school.secondary_colour%>" aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-education" style="color:<%= school.secondary_colour %>" aria-hidden="true"></span>
   </li>
 <% end %>
