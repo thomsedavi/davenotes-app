@@ -19,7 +19,7 @@ class CoursesController < ApplicationController
     @course.school_id = params[:id]
 
     if @course.save
-      @course_user = CourseUser.new(course: @course, user: @current_user, admin: true)
+      @course_user = CourseUser.new(course: @course, user: @current_user, active: true, admin: true)
       @course_user.save
 
       redirect_to @course
@@ -29,6 +29,7 @@ class CoursesController < ApplicationController
   end
 
   private
+
   def course_params
     params.require(:course).permit(:code, :title)
   end

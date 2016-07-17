@@ -1,3 +1,17 @@
 <% provide(:title, @course.code + ': ' + @course.title) %>
 <p>hi this is a course, add questions here</p>
+
+<%if current_user %>
+  <% if unknown? %>
+    <p>I don't know you! Would you like to apply to be able to edit this course?</p>
+    <%= link_to 'apply', controller: 'course_users', action: 'new', course: @course %>
+  <% elsif admin? %>
+    <p>You are admin!</p>
+  <% elsif active? %>
+    <p>You are active in this course!</p>
+   <% else %>
+    <p>You have applied to be able to edit this course!</p>
+  <% end %>
+<% end %>
+
 <%= link_to 'back to school', controller: 'schools', action: 'show', id: @course.school_id %>

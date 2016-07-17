@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :schools
   resources :courses
   resources :users
+  resources :course_users
 
   root 'static_pages#home'
 
