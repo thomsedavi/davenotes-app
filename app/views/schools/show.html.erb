@@ -17,7 +17,9 @@
 <% if !@school.active %>
   <p>This school is being reviewed to make sure it's a real school.</p>
 <% else %>
-  <p><%= link_to 'add course', "#{@school.id.to_s}/courses/new" %></p>
+  <% if current_user %>
+    <p><%= link_to 'add course', "#{@school.id.to_s}/courses/new" %></p>
+  <% end %>
 <% end %>
 
 <p><%= link_to 'back', schools_path %></p>

@@ -1,4 +1,6 @@
 class CoursesController < ApplicationController
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+
   def index
   end
 
@@ -17,6 +19,9 @@ class CoursesController < ApplicationController
     @course.school_id = params[:id]
 
     if @course.save
+      @course_user = CourseUser.new(course: @course, user: @current_user, admin: true)
+      @course_user.save
+
       redirect_to @course
     else
       render 'new'
