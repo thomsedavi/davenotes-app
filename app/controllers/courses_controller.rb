@@ -7,6 +7,7 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
     @school = School.find(@course.school_id)
+    @course_users = CourseUser.where(course: @course, active: false)
   end
 
   def new

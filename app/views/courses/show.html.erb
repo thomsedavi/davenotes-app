@@ -7,6 +7,9 @@
     <%= link_to 'apply', controller: 'course_users', action: 'new', course: @course %>
   <% elsif admin? %>
     <p>You are admin!</p>
+        <ul class="users">
+          <%= render @course_users %>
+        </ul>
   <% elsif active? %>
     <p>You are active in this course!</p>
    <% else %>

@@ -1,0 +1,5 @@
+<li>
+  <%= course_user.user.name %>
+  <%= link_to 'confirm', edit_course_user_path(id: course_user, method: 'confirm') %>
+  <%= link_to 'delete', edit_course_user_path(id: course_user, method: 'delete') %>
+</li>
