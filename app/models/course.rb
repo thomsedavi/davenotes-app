@@ -3,6 +3,8 @@ class Course < ActiveRecord::Base
   has_many :course_users
   has_many :users, through: :course_users
 
+  has_many :notifications, dependent: :destroy
+
   validates :title,  presence: true, length: { maximum: 255 }
   validates :code,  presence: true, length: { maximum: 255 }
 

@@ -24,6 +24,12 @@
               <li><%= link_to 'Profile', current_user %></li>
               <li><%= link_to 'Settings', edit_user_path(current_user) %></li>
               <li class="divider"></li>
+              <% for notification in notifications %>
+                <li><%= link_to notification.message, controller: notification.controller, action: 'show', id: notification.target %></li>
+              <% end %>
+              <% if notifications.size > 0 %>
+                <li class="divider"></li>
+              <% end %>
               <li>
                 <%= link_to 'Log out', logout_path, method: 'delete' %>
               </li>

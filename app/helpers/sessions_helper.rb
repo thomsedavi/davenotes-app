@@ -60,6 +60,10 @@ module SessionsHelper
     session[:forwarding_url] = request.original_url if request.get?
   end
 
+  def notifications
+    @notifications = Notification.all
+  end
+
   # Before filters
 
   # Confirms a logged-in user.
