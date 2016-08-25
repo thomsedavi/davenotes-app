@@ -1,28 +1,7 @@
-== README
+== DaveNotes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a defunct website idea that I had been working. The idea was that students could share questions with each other and work on them together, for example to work out answers to a previous year's exam questions for the purpose of using them to study. Students could also import notes from other similar courses at other institutions.
 
-Things you may want to cover:
+However the more I thought about it, and the more I talked to people about the idea, the more I realised how problematic this could be, for exmaple if a university is protective of the exam questions of previous years. I wouldn't have enough time to monitor potential intellectual property being uploaded.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+I will leave what I have done here for reference in case I want to work on a similar site again.
